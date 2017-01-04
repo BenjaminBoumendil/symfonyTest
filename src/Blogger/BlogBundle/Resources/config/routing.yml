@@ -9,3 +9,9 @@ BlogBundle_about:
     defaults: { _controller: BlogBundle:Default:about }
     requirements:
         _method:  GET
+
+BlogBundle_contact:
+    path:     /contact
+    defaults: { _controller: BlogBundle:Default:contact }
+    requirements:
+        _method:  GET|POST
