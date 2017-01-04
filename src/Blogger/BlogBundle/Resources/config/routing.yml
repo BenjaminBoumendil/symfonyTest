@@ -1,5 +1,11 @@
-blog_homepage:
+BlogBundle_homepage:
     path:     /
     defaults: { _controller: BlogBundle:Default:index }
+    requirements:
+        _method:  GET
+
+BlogBundle_about:
+    path:     /about
+    defaults: { _controller: BlogBundle:Default:about }
     requirements:
         _method:  GET
