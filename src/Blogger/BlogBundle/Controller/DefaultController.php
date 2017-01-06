@@ -12,7 +12,7 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()
-                   ->getEntityManager();
+                   ->getManager();
 
         $blogs = $em->getRepository('BlogBundle:Blog')
                     ->getLatestBlogs();
@@ -35,11 +35,8 @@ class DefaultController extends Controller
         if ($request->getMethod() == 'POST') {
             $form->handleRequest($request);
 
-            if ($form->isValid()) {
+            if ($form->isSubmitted() && $form->isValid()) {
                 // Perform some action, such as sending an email
-
-                // Redirect - This is important to prevent users re-posting
-                // the form if they refresh the page
                 return $this->redirect($this->generateUrl('BlogBundle_contact'));
             }
         }
