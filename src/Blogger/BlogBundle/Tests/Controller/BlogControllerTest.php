@@ -17,8 +17,8 @@ class BlogControllerTest extends WebTestCase
 
         $form = $crawler->selectButton('Submit')->form();
 
-        $form['user'] = 'name';
-        $form['comment[comment]'] = 'comment';
+        $form['blogger_blogbundle_comment[user]'] = 'name';
+        $form['blogger_blogbundle_comment[comment]'] = 'comment';
 
         $crawler = $client->submit($form);
 
